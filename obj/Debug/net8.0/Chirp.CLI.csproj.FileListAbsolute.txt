@@ -1,0 +1,15 @@
+/home/sweatyfish/Desktop/BDSA/Coding/Chirp/bin/Debug/net8.0/Chirp.CLI
+/home/sweatyfish/Desktop/BDSA/Coding/Chirp/bin/Debug/net8.0/Chirp.CLI.deps.json
+/home/sweatyfish/Desktop/BDSA/Coding/Chirp/bin/Debug/net8.0/Chirp.CLI.runtimeconfig.json
+/home/sweatyfish/Desktop/BDSA/Coding/Chirp/bin/Debug/net8.0/Chirp.CLI.dll
+/home/sweatyfish/Desktop/BDSA/Coding/Chirp/bin/Debug/net8.0/Chirp.CLI.pdb
+/home/sweatyfish/Desktop/BDSA/Coding/Chirp/obj/Debug/net8.0/Chirp.CLI.GeneratedMSBuildEditorConfig.editorconfig
+/home/sweatyfish/Desktop/BDSA/Coding/Chirp/obj/Debug/net8.0/Chirp.CLI.AssemblyInfoInputs.cache
+/home/sweatyfish/Desktop/BDSA/Coding/Chirp/obj/Debug/net8.0/Chirp.CLI.AssemblyInfo.cs
+/home/sweatyfish/Desktop/BDSA/Coding/Chirp/obj/Debug/net8.0/Chirp.CLI.csproj.CoreCompileInputs.cache
+/home/sweatyfish/Desktop/BDSA/Coding/Chirp/obj/Debug/net8.0/Chirp.CLI.sourcelink.json
+/home/sweatyfish/Desktop/BDSA/Coding/Chirp/obj/Debug/net8.0/Chirp.CLI.dll
+/home/sweatyfish/Desktop/BDSA/Coding/Chirp/obj/Debug/net8.0/refint/Chirp.CLI.dll
+/home/sweatyfish/Desktop/BDSA/Coding/Chirp/obj/Debug/net8.0/Chirp.CLI.pdb
+/home/sweatyfish/Desktop/BDSA/Coding/Chirp/obj/Debug/net8.0/Chirp.CLI.genruntimeconfig.cache
+/home/sweatyfish/Desktop/BDSA/Coding/Chirp/obj/Debug/net8.0/ref/Chirp.CLI.dll
