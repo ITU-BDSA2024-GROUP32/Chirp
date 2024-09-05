@@ -7,8 +7,6 @@ namespace Chirp.CLI
     {
         static void Main(string[] args)
         {
-
-            if (args.Length > 0 && args[0] == "read")
             bool KillProgram = false;
             String ConsoleInput;
 
@@ -41,9 +39,6 @@ namespace Chirp.CLI
         }
 
         public static void read(){
-            string filePath = "chirp_cli_db.csv";
-            if (File.Exists(filePath))
-            {
                 // Read the CSV file
                 string filePath = "chirp_cli_db.csv";
                 if (File.Exists(filePath))
@@ -65,12 +60,8 @@ namespace Chirp.CLI
                 {
                     Console.WriteLine("The file chirp_cli_db.csv does not exist.");
                 }
-            }
-            else
-            {
-                Console.WriteLine("Usage: Chirp.CLI read");
-            }
         }
+
         public static void cheep (){
         Console.WriteLine("John,Doe,30,New York");
         string input = Console.ReadLine();
