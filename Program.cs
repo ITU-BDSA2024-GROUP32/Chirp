@@ -7,9 +7,8 @@ namespace Chirp.CLI
     {
         static void Main(string[] args)
         {
-<<<<<<< Updated upstream
+
             if (args.Length > 0 && args[0] == "read")
-=======
             bool KillProgram = false;
             String ConsoleInput;
 
@@ -44,7 +43,6 @@ namespace Chirp.CLI
         public static void read(){
             string filePath = "chirp_cli_db.csv";
             if (File.Exists(filePath))
->>>>>>> Stashed changes
             {
                 // Read the CSV file
                 string filePath = "chirp_cli_db.csv";
