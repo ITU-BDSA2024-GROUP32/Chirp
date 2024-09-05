@@ -1,0 +1,15 @@
+c:\Users\vikto\Documents\GitHub\Chirp\StringTo\bin\Debug\net8.0\StringTo.exe
+C:\Users\vikto\Documents\GitHub\Chirp\StringTo\bin\Debug\net8.0\StringTo.deps.json
+C:\Users\vikto\Documents\GitHub\Chirp\StringTo\bin\Debug\net8.0\StringTo.runtimeconfig.json
+c:\Users\vikto\Documents\GitHub\Chirp\StringTo\bin\Debug\net8.0\StringTo.dll
+c:\Users\vikto\Documents\GitHub\Chirp\StringTo\bin\Debug\net8.0\StringTo.pdb
+c:\Users\vikto\Documents\GitHub\Chirp\StringTo\obj\Debug\net8.0\StringTo.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\vikto\Documents\GitHub\Chirp\StringTo\obj\Debug\net8.0\StringTo.AssemblyInfoInputs.cache
+c:\Users\vikto\Documents\GitHub\Chirp\StringTo\obj\Debug\net8.0\StringTo.AssemblyInfo.cs
+c:\Users\vikto\Documents\GitHub\Chirp\StringTo\obj\Debug\net8.0\StringTo.csproj.CoreCompileInputs.cache
+c:\Users\vikto\Documents\GitHub\Chirp\StringTo\obj\Debug\net8.0\StringTo.sourcelink.json
+c:\Users\vikto\Documents\GitHub\Chirp\StringTo\obj\Debug\net8.0\StringTo.dll
+c:\Users\vikto\Documents\GitHub\Chirp\StringTo\obj\Debug\net8.0\refint\StringTo.dll
+c:\Users\vikto\Documents\GitHub\Chirp\StringTo\obj\Debug\net8.0\StringTo.pdb
+C:\Users\vikto\Documents\GitHub\Chirp\StringTo\obj\Debug\net8.0\StringTo.genruntimeconfig.cache
+C:\Users\vikto\Documents\GitHub\Chirp\StringTo\obj\Debug\net8.0\ref\StringTo.dll
