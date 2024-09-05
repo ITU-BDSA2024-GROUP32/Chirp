@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vikto\\Documents\\GitHub\\Chirp\\Chirp.CLI.csproj": {}
+    "/home/sweatyfish/Desktop/BDSA/Coding/Chirp/Chirp.CLI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vikto\\Documents\\GitHub\\Chirp\\Chirp.CLI.csproj": {
+    "/home/sweatyfish/Desktop/BDSA/Coding/Chirp/Chirp.CLI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vikto\\Documents\\GitHub\\Chirp\\Chirp.CLI.csproj",
+        "projectUniqueName": "/home/sweatyfish/Desktop/BDSA/Coding/Chirp/Chirp.CLI.csproj",
         "projectName": "Chirp.CLI",
-        "projectPath": "C:\\Users\\vikto\\Documents\\GitHub\\Chirp\\Chirp.CLI.csproj",
-        "packagesPath": "C:\\Users\\vikto\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vikto\\Documents\\GitHub\\Chirp\\obj\\",
+        "projectPath": "/home/sweatyfish/Desktop/BDSA/Coding/Chirp/Chirp.CLI.csproj",
+        "packagesPath": "/home/sweatyfish/.nuget/packages/",
+        "outputPath": "/home/sweatyfish/Desktop/BDSA/Coding/Chirp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\vikto\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/home/sweatyfish/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -32,11 +32,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -58,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.108/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
