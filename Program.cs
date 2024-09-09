@@ -26,38 +26,53 @@ namespace Chirp.CLI
                     Console.WriteLine();
                     Console.WriteLine("exit   -- Exits Program");
                     Console.WriteLine("read   -- Reads current cheep feed");
-                    Console.WriteLine("cheep <CheepText> -- Cheeps text in <> (<>) not needed");
+                    Console.WriteLine("cheep -- Next input is your cheep");
+
                     break;
                 case "read":
                     Console.WriteLine();
                     read();
+                    break;
+                case "cheep":
+                    Console.WriteLine("hej1");
+                    cheep();
+                    Console.WriteLine("hej2");
                     break;
                 }
             }
         }
 
         public static void read(){
-            string filePath = "chirp_cli_db.csv";
-            if (File.Exists(filePath))
-            {
-                var lines = File.ReadAllLines(filePath);
-                 foreach (var line in lines)
-                 {
-                   var columns = line.Split(',');
-                    if (columns.Length >= 3)
+                // Read the CSV file
+                string filePath = "chirp_cli_db.csv";
+                if (File.Exists(filePath))
+                {
+                    var lines = File.ReadAllLines(filePath);
+                    foreach (var line in lines)
                     {
-                        string author = columns[0];
-                        string dateTime = columns[1];
-                        string message = columns[2];
-                        Console.WriteLine($"{author} @ {dateTime}: {message}");
+                        var columns = line.Split(',');
+                        if (columns.Length >= 3)
+                        {
+                            string author = columns[0];
+                            string dateTime = columns[1];
+                            string message = columns[2];
+                            Console.WriteLine($"{author} @ {dateTime}: {message}");
+                        }
                     }
                 }
-            }
-            else
-            {
-                Console.WriteLine("The file chirp_cli_db.csv does not exist.");
-            }
+        }
 
+        public static void cheep (){
+        string input = Console.ReadLine();
+        
+        string[] values = input.Split(',');
+
+        string csvLine = string.Join(",",values);
+
+        string filePath = "chirp_cli_db.csv";
+
+        File.AppendAllText(filePath, csvLine + Environment.NewLine);
+        //File.AppendAllText(filePath, );
         }
     }
 }
