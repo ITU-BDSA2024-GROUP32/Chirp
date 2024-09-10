@@ -10,8 +10,15 @@ namespace Chirp.CLI
       
         static void Main(string[] args)
         {
+            string user;
             bool KillProgram = false;
-            String ConsoleInput;
+            string ConsoleInput;
+
+
+            Console.WriteLine("What is you user name?");
+            user = Console.ReadLine();
+            Console.WriteLine("Hello " + user + " type 'help' to see commands");
+
 
             while(!KillProgram){
                 ConsoleInput = Console.ReadLine(); 
@@ -34,9 +41,7 @@ namespace Chirp.CLI
                     read();
                     break;
                 case "cheep":
-                    Console.WriteLine("hej1");
-                    cheep();
-                    Console.WriteLine("hej2");
+                    cheep(user);
                     break;
                 }
             }
@@ -62,17 +67,25 @@ namespace Chirp.CLI
                 }
         }
 
-        public static void cheep (){
+        public static void cheep (string user){
         string input = Console.ReadLine();
         
-        string[] values = input.Split(',');
-
-        string csvLine = string.Join(",",values);
+        string csvLine = user + "," + getDateTime() + "," + input;
 
         string filePath = "chirp_cli_db.csv";
 
         File.AppendAllText(filePath, csvLine + Environment.NewLine);
-        //File.AppendAllText(filePath, );
+      
+        }
+
+
+        public static String getUnixTime(){
+            long time = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+            return time.ToString();
+        }
+
+        public static String getDateTime(){
+            return DateTime.Now.ToString();
         }
     }
 }
