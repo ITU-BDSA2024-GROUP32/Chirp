@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "t0r1b9BXA+/38+rpgnqYqfQCxOcOQF/ECZU27r9+ewfku4jfLVH5WuxYhsq1H3TogcYO1ze1CfIzunWUe2Skpg==",
+  "dgSpecHash": "RKlTOVvcD3mMuHS4NG9ZLYmo66yr91BMYModwJvFv5uIvHIb1iOPdfTH3KNC5u+MF1zxL9HWtZQb/biPcBCQ3Q==",
   "success": true,
   "projectFilePath": "/home/sweatyfish/Desktop/BDSA/Coding/Chirp/Chirp.CLI.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/home/sweatyfish/.nuget/packages/csvhelper/33.0.1/csvhelper.33.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

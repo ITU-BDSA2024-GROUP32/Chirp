@@ -1,18 +1,27 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
+using CsvHelper;
+
 
 
 namespace Chirp.CLI
 {
+
+    public record Cheep(String Author, String Message, long TimeStamp);
+
     class Program
     {
-      
-        static void Main(string[] args)
+        IEnumerable<Cheep> cheeps;
+         static void Main(string[] args)
         {
             string user;
             bool KillProgram = false;
             string ConsoleInput;
+
+            
+            
 
 
             Console.WriteLine("What is you user name?");
@@ -48,44 +57,34 @@ namespace Chirp.CLI
         }
 
         public static void read(){
-                // Read the CSV file
-                string filePath = "chirp_cli_db.csv";
-                if (File.Exists(filePath))
-                {
-                    var lines = File.ReadAllLines(filePath);
-                    foreach (var line in lines)
-                    {
-                        var columns = line.Split(',');
-                        if (columns.Length >= 3)
-                        {
-                            string author = columns[0];
-                            string dateTime = columns[1];
-                            string message = columns[2];
-                            Console.WriteLine($"{author} @ {dateTime}: {message}");
-                        }
-                    }
-                }
+            // Read the CSV file
+            using (var reader = new StreamReader("cheeps.csv"))
+            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+            {
+             var cheeps = csv.GetRecords<Cheep>();
+             foreach (Cheep cheep in cheeps){
+                Console.WriteLine(cheep.Author + "@ " + cheep.Message + ": " + DateTimeOffset.FromUnixTimeSeconds(cheep.TimeStamp).DateTime);
+             }
+            }
         }
 
         public static void cheep (string user){
         string input = Console.ReadLine();
+
+        Cheep cheep = new Cheep(user,input,getUnixTime());
         
-        string csvLine = user + "," + getDateTime() + "," + input;
-
-        string filePath = "chirp_cli_db.csv";
-
-        File.AppendAllText(filePath, csvLine + Environment.NewLine);
-      
+        using (var Stream = File.Open("cheeps.csv",FileMode.Append))
+        using (var writer = new StreamWriter(Stream))
+        using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
+        {
+            csv.WriteRecord(cheep);
+            writer.WriteLine();
+        } 
         }
 
 
-        public static String getUnixTime(){
-            long time = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
-            return time.ToString();
-        }
-
-        public static String getDateTime(){
-            return DateTime.Now.ToString();
+        public static long getUnixTime(){
+            return DateTimeOffset.UtcNow.ToUnixTimeSeconds();
         }
     }
 }
