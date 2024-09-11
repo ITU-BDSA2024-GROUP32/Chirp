@@ -1,27 +1,26 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
-using System.Globalization;
 using System.IO;
-using CsvHelper;
+using System.Numerics;
+using Simpledb;
 
 
 
 namespace Chirp.CLI
 {
 
-    public record Cheep(String Author, String Message, long TimeStamp);
 
     class Program
     {
         IEnumerable<Cheep> cheeps;
          static void Main(string[] args)
         {
+            IDataBaseepository<Cheep> database = new CsvDataBase<Cheep>();
             string user;
             bool KillProgram = false;
-            string ConsoleInput;
+            string[] ConsoleInput;
 
-            
-            
 
 
             Console.WriteLine("What is you user name?");
@@ -30,8 +29,9 @@ namespace Chirp.CLI
 
 
             while(!KillProgram){
-                ConsoleInput = Console.ReadLine(); 
-               switch(ConsoleInput)
+                ConsoleInput = Console.ReadLine().Split("-");
+                
+               switch(ConsoleInput[0].Replace(" ",""))
                {
                 case "exit":
                     Console.WriteLine();
@@ -41,46 +41,22 @@ namespace Chirp.CLI
                 case "help":
                     Console.WriteLine();
                     Console.WriteLine("exit   -- Exits Program");
-                    Console.WriteLine("read   -- Reads current cheep feed");
-                    Console.WriteLine("cheep -- Next input is your cheep");
-
+                    Console.WriteLine("read -'limit'    -- read the limit amount of cheeps starting with the newest");
+                    Console.WriteLine("cheep -'message'   --sends the cheep in the <> dont include '<>'");
                     break;
                 case "read":
                     Console.WriteLine();
-                    read();
+                    database.read(int.Parse(ConsoleInput[1].Replace(" ","")));
                     break;
                 case "cheep":
-                    cheep(user);
+                    cheep(user,ConsoleInput[1],database);
                     break;
                 }
             }
         }
 
-        public static void read(){
-            // Read the CSV file
-            using (var reader = new StreamReader("cheeps.csv"))
-            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
-            {
-             var cheeps = csv.GetRecords<Cheep>();
-             foreach (Cheep cheep in cheeps){
-                Console.WriteLine(cheep.Author + "@ " + cheep.Message + ": " + DateTimeOffset.FromUnixTimeSeconds(cheep.TimeStamp).DateTime);
-             }
-            }
-        }
-
-        public static void cheep (string user){
-            string input = Console.ReadLine();
-
-            Cheep cheep = new Cheep(user,input,getUnixTime());
-        
-            using (var Stream = File.Open("cheeps.csv",FileMode.Append))
-            using (var writer = new StreamWriter(Stream))
-            using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
-            {
-                csv.WriteRecord(cheep);
-                writer.WriteLine();
-            } 
-            Console.WriteLine("Cheep was succesfully sent!");
+        public static void cheep (string user,string input,IDataBaseepository<Cheep> database){
+            database.store(new Cheep(user,input,getUnixTime()));
         }
 
 

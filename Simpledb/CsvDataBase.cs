@@ -9,14 +9,18 @@ public class CsvDataBase<T> : IDataBaseepository<T>
 
     }
      public IEnumerable<T> read(int? limit){
-        Cheep cheep;
+        int i = 0;
         using (var reader = new StreamReader("cheeps.csv"))
         using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
         {
             var cheeps = csv.GetRecords<Cheep>();
-            for(int i = 0 ; i < limit ; i++){
-                cheep = cheeps.ElementAt(i);
-                Console.WriteLine(cheep.Author + "@ " + cheep.Message + ": " + DateTimeOffset.FromUnixTimeSeconds(cheep.TimeStamp).DateTime);
+
+            foreach(Cheep cheep in cheeps){
+                Console.WriteLine(cheep.Author + "@ " + cheep.Message + ": " + DateTimeOffset.FromUnixTimeSeconds(cheep.TimeStamp).DateTime); 
+                i++;
+                if(i == limit){
+                    break;
+                }
             }
         }
         return null;
