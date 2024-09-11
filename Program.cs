@@ -69,17 +69,18 @@ namespace Chirp.CLI
         }
 
         public static void cheep (string user){
-        string input = Console.ReadLine();
+            string input = Console.ReadLine();
 
-        Cheep cheep = new Cheep(user,input,getUnixTime());
+            Cheep cheep = new Cheep(user,input,getUnixTime());
         
-        using (var Stream = File.Open("cheeps.csv",FileMode.Append))
-        using (var writer = new StreamWriter(Stream))
-        using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
-        {
-            csv.WriteRecord(cheep);
-            writer.WriteLine();
-        } 
+            using (var Stream = File.Open("cheeps.csv",FileMode.Append))
+            using (var writer = new StreamWriter(Stream))
+            using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
+            {
+                csv.WriteRecord(cheep);
+                writer.WriteLine();
+            } 
+            Console.WriteLine("Cheep was succesfully sent!");
         }
 
 
