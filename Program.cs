@@ -46,7 +46,7 @@ namespace Chirp.CLI
                     break;
                 case "read":
                     Console.WriteLine();
-                    database.read(int.Parse(ConsoleInput[1].Replace(" ","")));
+                    UserInterface.PrintCheeps(database.read(int.Parse(ConsoleInput[1].Replace(" ",""))));
                     break;
                 case "cheep":
                     cheep(user,ConsoleInput[1],database);
